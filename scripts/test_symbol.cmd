@@ -1,7 +1,7 @@
 @echo off
 
 if exist %1 rmdir /S /Q %1
-call %~dp0\unpack_to %1.sleepy %1
+call %~dp0\unpack_to %1.sleepy %1 > nul
 if errorlevel 1 exit 1
 
 set FOUND=0
