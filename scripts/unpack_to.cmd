@@ -1,5 +1,7 @@
 @echo off
 
+rem Unpack archive %1 to directory %2, if this was not done already.
+
 if not exist %2 mkdir %2
 
 set FILE=%~dpnx1
