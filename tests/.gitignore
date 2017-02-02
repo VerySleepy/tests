@@ -3,3 +3,6 @@
 *.unpacked
 *.txt
 Version * required
+
+*.ilk
+*.obj
