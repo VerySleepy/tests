@@ -4,6 +4,7 @@ if not exist program.exe call build
 
 rem Test symbol resolution with gcc 4.9.
 rem Note: Wine dbghelp can't decode these yet.
+rem https://github.com/VerySleepy/verysleepy/issues/9
 
 set SLEEPY_SILENT_CRASH=1
 
