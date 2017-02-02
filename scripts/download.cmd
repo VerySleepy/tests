@@ -1,9 +1,6 @@
 @echo off
 
-rem Download %1 to %2.
-
-set URL=%1
-set DEST=%2
+rem Download %URL% to %DEST%.
 
 if exist %DEST% goto :eof
 

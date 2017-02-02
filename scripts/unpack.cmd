@@ -1,4 +1,4 @@
-::@echo off
+@echo off
 setlocal enabledelayedexpansion
 
 rem Unpack %1 to the current directory.
@@ -12,3 +12,12 @@ if not defined 7ZIP echo drmingw_build: Can't find 7-Zip installation - please a
 
 !7ZIP! x -y %1
 if errorlevel 1 exit /b 1
+
+set FN=%~1
+
+if [%FN:~-7%] == [.tar.gz] (
+	set TAR=%~n1
+	if not exist "%TAR%" echo Expected .tar archive: %~n1
+	!7ZIP! x -y "%~n1"
+	del "%~n1"
+)
