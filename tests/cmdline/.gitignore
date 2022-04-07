@@ -1,0 +1,5 @@
+*.ilk
+*.pdb
+
+# custom script to build (outside of appveyor environment)
+build.local.bat
