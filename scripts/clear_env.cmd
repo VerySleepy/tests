@@ -13,3 +13,9 @@ set VC=
 set VS_YEAR=
 set CC=
 set MAKE=
+
+rem Ensure these don't interfere with tests.
+rem   https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/general-environment-variables
+set _NT_SYMBOL_PATH=
+set _NT_ALT_SYMBOL_PATH=
+set _NT_SYMBOL_PROXY=

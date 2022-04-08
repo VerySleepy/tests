@@ -12,7 +12,7 @@ set SLEEPY_SILENT_CRASH=1
 for %%b in (32 64) do (
 	echo Testing %%b
 
-        FOR %%o in (minidump samplerate) do (
+        FOR %%o in (minidump samplerate symopts) do (
 		rem  Discard any saved config options.
 		call ..\..\scripts\clear_config
 	
