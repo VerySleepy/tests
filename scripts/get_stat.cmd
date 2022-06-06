@@ -1,8 +1,8 @@
 @setlocal enabledelayedexpansion
 @echo off
 
-rem  usage: test_stat.cmd <sleepy_file_basename> <stat_descr> <target_envvar>
-rem  Get <stat_descr> from Stats.txt and save its value in <target_envvar>
+rem  usage: get_stat.cmd sleepy_file_basename stat_descr target_envvar
+rem  Get `stat_descr` from Stats.txt and save its value in `target_envvar`
 
 set "SLEEPY_BASE=%~1"
 set "STAT_DESCR=%~2"
@@ -15,12 +15,12 @@ if errorlevel 1 exit 1
 set FOUND=0
 set STAT_VALUE=_NOT_FOUND_
 if exist "!SLEEPY_BASE!\Stats.txt" (
-   for /f "tokens=1,2* delims=: " %%a in (!SLEEPY_BASE!\Stats.txt) do (
-       if "%%~a"=="!STAT_DESCR!" (
-          set FOUND=1
-          set "STAT_VALUE=%%~b"
-       )
-   )
+	for /f "tokens=1,2* delims=: " %%a in (!SLEEPY_BASE!\Stats.txt) do (
+		 if "%%~a"=="!STAT_DESCR!" (
+			 set FOUND=1
+			 set "STAT_VALUE=%%~b"
+		 )
+	)
 )
 if %FOUND% == 0 exit /b 1
 
