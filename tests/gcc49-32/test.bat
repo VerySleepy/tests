@@ -10,6 +10,10 @@ set SLEEPY_SILENT_CRASH=1
 
 for %%b in (32 64) do for %%d in (mingw) do (
 	echo Testing %%b-%%d
+
+	rem  Discard any saved config options.
+	call ..\..\scripts\clear_config
+
 	if exist program-%%b-%%d.sleepy del program-%%b-%%d.sleepy
 	call ..\..\scripts\sleepy%%b --%%d /r:program.exe /o:program-%%b-%%d.sleepy
 	if !ERRORLEVEL! neq 0 exit /b 1
