@@ -10,15 +10,19 @@ rem Verify that command-line options are honored and do not override saved confi
 set SLEEPY_SILENT_CRASH=1
 
 for %%b in (32 64) do (
+	echo.
+	echo ============================================================
 	echo Testing %%b
+	echo.
+	echo.
 
-        FOR %%o in (minidump samplerate symopts) do (
+	FOR %%o in (minidump samplerate symopts) do (
 		rem  Discard any saved config options.
 		call ..\..\scripts\clear_config
 	
-                call test_cmdline_%%o.cmd %%b
+		call test_cmdline_%%o.cmd %%b
 		if !ERRORLEVEL! neq 0 exit /b 1
 	)
 )
 
-echo %~dp0 OK
+echo %~f0: OK
